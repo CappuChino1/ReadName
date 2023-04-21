@@ -34,5 +34,5 @@ summary_df = summary_df.groupby(["Location", "Position"]).sum().reset_index()
 summary_df = summary_df[["Location", "Number of people", "Position"]]
 
 # Print the summary table
-print(summary_df)
+print(summary_df.to_string(index=False))
 
