@@ -33,6 +33,10 @@ summary_df = summary_df.groupby(["Location", "Position"]).sum().reset_index()
 #Rearrange the columns to move "Number of people" to the middle
 summary_df = summary_df[["Location", "Number of people", "Position"]]
 
+# Write the summary table to a text file
+with open("summary.txt", "w") as f:
+    f.write(summary_df.to_string(index=False))
+
 # Print the summary table
 print(summary_df.to_string(index=False))
 
